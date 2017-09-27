@@ -11,9 +11,9 @@ var app = app || {};
     //       Don't forget to remove the headers from our request - we're no longer using a token on the
     //       client side of our app, our new proxyGitHub function will be handling the token using our
     //       new environment variable!
-    $.get('/github/user/repos', function(){
+    $.get('/github/user/repos',
       data => repos.all = data, err => console.error(err)
-    }).then(callback);
+    ).then(callback);
   }
   repos.with = attr => repos.all.filter(repo => repo[attr]);
 
